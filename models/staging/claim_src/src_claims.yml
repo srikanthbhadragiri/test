@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: med_clm_src
+    database: medins_db
+    schema: raw_sc
+    tables:
+      - name: claim_master
+      - name: claim_diagnosis
+      - name: claim_activity

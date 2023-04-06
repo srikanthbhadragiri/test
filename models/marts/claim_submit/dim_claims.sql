@@ -1,14 +1,12 @@
-{{ config(materialized='table') }}
-
 with
     clm as (
         select * from {{ ref('stg_claim') }}
     ),
     diag as (
-        select * from {{ ref('stg_diagnosis') }}
+        select * from {{ ref('stg_clm_diagnosis') }}
     ),
     act as (
-        select * from {{ ref('stg_activity') }}
+        select * from {{ ref('stg_clm_activity') }}
     ),
     claimview as (
         select
